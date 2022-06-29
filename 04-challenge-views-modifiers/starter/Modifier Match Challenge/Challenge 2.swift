@@ -36,17 +36,28 @@ struct Challenge_2: View {
   var body: some View {
     VStack {
       Image(systemName: "sun.max.fill")
-        .renderingMode(.template)
+            .resizable()
+            .foregroundColor(.yellow)
+            .frame(width: 50, height: 50)
       
-      Text("Sunny")
+        Text("Sunny")
+            .font(.title)
+            .fontWeight(.semibold)
+            .foregroundColor(.white)
+
+        Text("H: 61º L: 44º")
+            .font(.body)
+            .foregroundColor(.white)
     }
+    .padding()
     .background(
       LinearGradient(
         gradient: Gradient(
           colors: [Color.white, Color.blue]),
-        startPoint: .top, endPoint: .bottom
+        startPoint: .topLeading, endPoint: .bottom
       )
     )
+    .cornerRadius(15)
   }
 }
 
